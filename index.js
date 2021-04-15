@@ -11,7 +11,7 @@ event.preventDefault()
 event.stopPropagation();
 const item = document.createElement('li');
 item.innerText = inputVal;
-item.addEventListener('click', crossOut)
+item.addEventListener('click', completeTodo)
 console.log(item.innerText);
 
 const button = document.createElement('button')
@@ -30,8 +30,29 @@ function removeTodo(event){
     event.target.parentNode.remove()
 }
 
-function crossOut(event){
-    // event.target.
+function completeTodo(event){
+   
+    if (event.target.getAttribute("aria-checked") !== 'true'){
+         event.target.setAttribute("aria-checked", "true")
+
+         const complete = document.getElementById('completed-message')
+        //  complete.style.visibility = 'visible';
+        complete.classList.toggle('hidden');
+         setTimeout(function(){
+        //  complete.style.visibility = 'hidden';
+        complete.classList.toggle('hidden');
+
+         }, 2000)
+        }
+    else{
+        
+    event.target.setAttribute("aria-checked", "false");
+    }
+//    checked = 
+//    console.log(checked);
+
+//    checked === "true" ? checked.setAttribute("false") : checked.setAttribute("true");
+   
 }
 
 

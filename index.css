@@ -41,9 +41,19 @@ li[aria-checked="true"] {
   list-style-image: url("./img/check-square-regular.svg");
 }
 
-#completed-message {
+/* #completed-message {
+  visibility: hidden;
+} */
+
+.hidden {
   visibility: hidden;
 }
+
+.shown {
+  visibility:visible;
+}
+
+
 
 button {
   border: none;
